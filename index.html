@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio M&O</title>
+    <link rel="stylesheet" href="./style.css">
+    <!-- icon-page --><link rel="icon" href="./imgs/LOGOM_O.png">
+<!-- icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.0/css/all.min.css" integrity="sha512-9xKTRVabjVeZmc+GUW8GgSmcREDunMM+Dt/GrzchfN8tkwHizc5RP4Ok/MXFFy5rIjJjzhndFScTceq5e6GvVQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+
+
+<style>
+    /* Spinner and Welcome Screen Styles */
+    #loading-screen {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url("./imgs/background-Portfolio-pc.png");
+        background-color: black;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+        color: #fff;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+    }
+
+    #loading-screen h1 {
+        font-size: 3rem;
+        margin-bottom: 20px;
+    }
+
+    .spinner {
+        width: 80px;
+        height: 10px;
+        border: 6px solid rgba(255, 255, 255, 0.764);
+        border-top-color: #d6ff62;
+        border-radius: 50%;
+        animation: spin 1s linear;
+    }
+
+    @keyframes spin {
+        0% {
+            transform: rotate(0deg);
+        }
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+</style>
+
+
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div id="loading-screen">
+        <h1>Welcome</h1>
+        <div class="spinner"></div>
+    </div>
+    
+
+    <div class="social-info">
+        <a class="Facebook" href="https://www.facebook.com/Bl3CK0"><i class="fa-brands fa-facebook"></i></a>
+        <a class="Instagram" href=""><i class="fa-brands fa-instagram"></i></a>
+        <a class="whatsapp" href=""><i class="fa-brands fa-whatsapp"></i></a>
+    </div>
+
+    <header>
+        <nav>
+            <a href="" class="divlogo">
+                <div class="logo">
+                    <img src="./imgs/LOGO-M&O.png" alt="">
+                </div>
+                <div class="visitoR">
+                    <span style="font-size: 15px; color: #d6ff62;"><i class="fa-regular fa-eye"></i></span>
+                    <span id="visitor-counter" style="font-size: 15px; color: #d6ff62;"></span>
+                   </div>
+            </a>
+
+            <ul class="header_nav_links">
+                <li><a href="" id="home-link" class="active"><span class="home_a">Home</span></a></li>
+                <li><a href="#About">About</a></li>
+                <li><a href="#Expertise">Expertise</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#Previousworks">Previous works</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+
+            <ul>
+                <li>
+                    <a href="./messages.html" class="Admin"><i class="fa-solid fa-user-tie"></i></a>
+                </li>
+            </ul>
+            
+
+           
+
+               <i id="btn-menu" class="fa-solid fa-list"></i>
+        </nav>
+
+        
+    </header>
+
+
+    <section class="section-me">
+<div class="div-imgs">
+    <img src="./imgs/photo/3.jpg" alt="">
+</div>
+
+        <div class="container">
+            <h1 class="sty-b sty-T Ftitle">Hi, It's Mohamed <br>Osama.</h1>
+            <h3 class="typing-text sty-T">I'm a <span></span></h3>
+            <p class="description">"Graphic Designer and Web Developer specializing in transforming ideas into <br> innovative designs and distinctive digital experiences."</p>
+            <div>
+                <button id="readMoreBtn" onclick="toggleReadMore()" class="btn-more">Show More</button>
+                <div id="moreContent" style="display: none;">
+                    <p class="description">I have experience in branding, user interfaces (UI), user experience (UX), <br>
+                         and website development using the latest technologies. I always strive to provide creative solutions <br>
+                          that combine beauty and functionality to meet the needs of clients.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+    <section id="About" class="about">
+       <div class="aboutTop">
+        <ul >
+            <p class="sty-T Ab-p ss">ABOUT</p>
+            <h2 class="about-title sty-T Ab-h2">Who We Are</h2>
+        </ul>
+       </div>
+        <div class="about-container">
+            <div class="about-description">
+                <p>
+                    I am a web developer dedicated to creativity and excellence. With the experience I have gained over the years, I aim to provide creative solutions tailored to your needs.
+                    I like the web, design and the work I do. I work closely with my clients to provide the best possible solutions to their needs.
+                </p>
+            </div>
+            <div class="about-image">
+                <img src="./imgs/photo/Picsart_24-11-25_11-19-05-875.png" alt="Team image">
+            </div>
+        </div>
+    </section>
+    
+    
+
+
+    <section id="Expertise" class="Expertise">
+        <div class="title-ex">
+            <p class="sty-T Ex-p ss">SKILLS</p>
+        <h2 class="sty-T Ex-h2">Expertise</h2>
+        </div>
+        
+            <div class="Expertises">
+
+
+             <div class="Expertise_s">
+
+                <div class="rangs">
+                    <div>
+                        <span class="text-exp Ht">
+                            <i class="fa-brands fa-html5"></i>
+                            <p>HTML5</p>
+                        </span>
+                        <div class="rang">
+                            <div class="rang-1" data-percent="100"></div>
+                            <span class="percentag_e">0%</span>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <span class="text-exp Cs">
+                            <i class="fa-brands fa-css3-alt"></i>
+                            <p>CSS3</p>
+                        </span>
+                        <div class="rang">
+                            <div class="rang-2" data-percent="85"></div>
+                            <span class="percentag_e">0%</span>
+                        </div>
+                    </div>
+            
+                    <div>
+                        <span class="text-exp JSs">
+                            <i class="fa-brands fa-node-js"></i>
+                            <p>JavaScript</p>
+                        </span>
+                        <div class="rang">
+                            <div class="rang-3" data-percent="65"></div>
+                            <span class="percentag_e">0%</span>
+                        </div>
+                    </div>
+            
+                    <div>
+                        <span class="text-exp Rea">
+                            <i class="fa-brands fa-react"></i>
+                            <p>React</p>
+                        </span>
+                        <div class="rang">
+                            <div class="rang-4" data-percent="50"></div>
+                            <span class="percentag_e">0%</span>
+                        </div>
+                    </div>
+                </div>
+            
+                
+
+                    <ul class="Div-Sk">
+                        
+                        <li>
+                            <div class="skill-card" data-percentage="80">
+                                <span class="text-expe">
+                                    <i class="fa-solid fa-comments"></i>
+                                    <p>Comunication</p>
+                                </span>
+                                <div class="circle-container">
+                                    <div class="circle">
+                                        <div class="percentage">0%</div>
+                                    </div>
+                                </div>
+                            </div>
+            
+                            <div class="skill-card" data-percentage="85">
+                                <span class="text-expe">
+                                    <i class="fa-solid fa-palette"></i>
+                                    <p>Creativity</p>
+                                </span>
+                                <div class="circle-container">
+                                    <div class="circle">
+                                        <div class="percentage">0%</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    
+        
+                    
+                        <li>
+                            <div class="skill-card" data-percentage="90">
+                            <span class="text-expe">
+                                <i class="fa-solid fa-people-group"></i>
+                                <p>TeamWork</p>
+                            </span>
+                            <div class="circle-container">
+                                <div class="circle">
+                                    <div class="percentage">0%</div>
+                                </div>
+                            </div>
+                        </div>
+        
+                        <div class="skill-card" data-percentage="75">
+                            <span class="text-expe">
+                                <i class="fa-solid fa-exclamation"></i>
+                                <p>Problem Solve</p>
+                            </span>
+                            <div class="circle-container">
+                                <div class="circle">
+                                    <div class="percentage">0%</div>
+                                </div>
+                            </div>
+
+                        </div>
+                        </li>
+
+                    </ul>
+
+
+
+             </div>
+                
+
+                <div class="containerEX">
+                    <div class="stats">
+                        <div class="Years-card text-card">
+                            <h2 class="Yh2">2</h2>
+                            <p>Years Experience</p>
+                        </div>
+                       <div class="Div--C">
+                        <div class="stat-card text-card">
+                            <h2>20+</h2>
+                            <p>Clients</p>
+                        </div>
+                        <div class="stat-card text-card">
+                            <h2>65+</h2>
+                            <p>Completed Projects</p>
+                        </div>
+                       </div>
+                    </div>
+                </div>
+
+            
+        </div>
+        
+
+            
+
+    </section>
+    
+
+        <section id="services" class="Services">
+            <div class="title-ex title-ser">
+                <p class="sty-T Ex-p ss">What you want</p>
+            <h2 class="sty-T Ex-h2">Services</h2>
+            </div>
+<div class="Ser-Top Ser_Top">
+    <div class="divServices">
+        <div class="divServices-ser">
+            <p class="text_serv">
+                <i class="fa-solid fa-gears"></i>
+                Service 1</p>
+        </div>
+        <div class="over1"></div>
+    </div>
+    <div class="divServices">
+        <div class="divServices-ser">
+            
+            <p class="text_serv">
+                <i class="fa-solid fa-gears"></i>
+                Service 2</p>
+        </div>
+        <div class="over1"></div>
+    </div>
+    <div class="divServices">
+        <div class="divServices-ser">
+            <p class="text_serv">
+                <i class="fa-solid fa-gears"></i>
+                Service 3</p>
+        </div>
+        <div class="over1"></div>
+    </div>
+    <div class="divServices">
+        <div class="divServices-ser">
+            <p class="text_serv">
+                <i class="fa-solid fa-gears"></i>
+                Service 4</p>
+        </div>
+        <div class="over1"></div>
+    </div>
+    <div class="divServices">
+        <div class="divServices-ser">
+            <p class="text_serv">
+                <i class="fa-solid fa-gears"></i>
+                Service 5</p>
+        </div>
+        <div class="over1"></div>
+    </div>
+    <div class="divServices">
+        <div class="divServices-ser">
+            <p class="text_serv">
+                <i class="fa-solid fa-gears"></i>
+                Service 6</p>
+        </div>
+        <div class="over1"></div>
+    </div>
+</div>
+        </section>
+
+
+        <section id="Previousworks" class="Pre__W">
+            <div class="title-ex title-ser Prev-t">
+                <p class="sty-T Ex-p ss">PROJECTS</p>
+                <h2 class="sty-T Ex-h2 Prev-tt">Previous works</h2>
+            </div>
+            <div class="carousel-container">
+                <!-- Slider main container -->
+                <div class="swiper">
+                    <!-- Additional required wrapper -->
+                    <div class="swiper-wrapper">
+                        <!-- Slides -->
+                        <div class="swiper-slide">
+                            <div class="slide-projests">
+                                <div class="Pre-text">
+                                    <h2>Title1</h2>
+                                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugit, nostrum.</p>
+                                </div>
+                                <img src="./project1.jpg" alt="Project 1">
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="slide-projests">
+                                <div class="Pre-text">
+                                    <h2>Title2</h2>
+                                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugit, nostrum.</p>
+                                </div>
+                                <img src="./project1.jpg" alt="Project 1">
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="slide-projests">
+                                <div class="Pre-text">
+                                    <h2>Title3</h2>
+                                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugit, nostrum.</p>
+                                </div>
+                                <img src="./project1.jpg" alt="Project 1">
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="slide-projests">
+                                <div class="Pre-text">
+                                    <h2>Title4</h2>
+                                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugit, nostrum.</p>
+                                </div>
+                                <img src="./project1.jpg" alt="Project 1">
+                            </div>
+                        </div>
+                    </div>
+        
+                    <!-- If we need pagination -->
+                    <div class="swiper-pagination"></div>
+        
+                    <!-- If we need navigation buttons -->
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+        
+                    <!-- If we need scrollbar -->
+                    <div class="swiper-scrollbar"></div>
+                </div>
+            </div>
+        </section>
+        
+        
+    
+
+
+
+    <section id="contact" class="Contact">
+        <!-- النجوم -->
+        <div class="star-field">
+            <!-- يتم إنشاء النجوم بشكل ديناميكي عبر CSS -->
+        </div>
+        
+        <!-- محتوى التواصل -->
+        <div class="Contactt">
+            <div class="ContactUs">
+                <h2>Contact Us</h2>
+                <span><i class="fa-brands fa-teamspeak"></i><p>info.mo.0sama@gmail.com</p></span>
+                <span><i class="fa-solid fa-square-phone"></i><p>01555909021</p></span>
+                <div class="Con--icons">
+                    <a href=""><i class="fa-brands fa-linkedin"></i></a>
+                    <a href=""><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href=""><i class="fa-brands fa-threads"></i></a>
+                </div>
+            </div>
+        
+            <!-- نموذج الاتصال -->
+            <div class="containe_r">
+                <input type="text" id="name" placeholder="Your Name" required>
+                <input type="email" id="email" placeholder="Your Email" required>
+                <textarea id="message" rows="4" placeholder="Your Message" required></textarea>
+                <button class="btnCon" onclick="saveMessage()">Submit</button>
+            </div>
+        </div>
+    </section>
+    
+    
+
+
+
+
+
+
+
+
+
+    <footer>
+        <h4>@Mohamed</h4>
+        <div class="footer_ico">
+            <div class="kafil">
+                <a href="https://kafiil.com/"><i class="fa-brands fa-kaggle"></i></a>
+            </div>
+            <p class="blanks">|</p>
+            <div class="upwork">
+                <a href="https://www.upwork.com/freelancers/~013c1823d2dd7c3aa8"><i class="fa-brands fa-upwork"></i></a>
+            </div>
+            <p class="blanks">|</p>
+            <div class="yared">
+                <a href="https://freelanceyard.com/en/freelancers/mohamed-osama-16"><i class="fa-solid fa-dragon"></i></a>
+            </div>
+        </div>
+        <span class="blanks">© 2024 M&O</span>
+    </footer>
+
+
+    <!-- زر الرجوع إلى الأعلى -->
+<a href="#" id="backToTop" class="back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+</a>
+
+
+    <script src="./app.js"></script>
+    
+
+ <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+</body>
+</html>

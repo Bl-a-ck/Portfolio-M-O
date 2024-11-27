@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <!-- icon-page --><link rel="icon" href="./imgs/LOGOM_O.png">
+    <title>Admin Messages</title>
+    <!-- Font Awesome Library -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        /* إعدادات عامة */
+        *{
+            position: relative;
+            margin: 0px;
+            padding: 0px;
+            border: none;
+            outline: none;
+        }
+        body {
+            width: 100svw;
+            background-image: url("./black_paint_background.jpg");
+        background-position: center;
+        background-size: cover;
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+            color: #fff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container{
+            height: 100svh;
+            width: 80%;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #login-container{
+            width: 400px;
+            background-color: rgba(0, 0, 0, 0.254);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            text-align: center;
+            padding: 10px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.7);
+        }
+
+        .divinput{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .btnLog{
+            width: 35%;
+            background: linear-gradient(45deg, #140087, #2990b9);
+            border: none;
+            border-radius: 10px;
+            padding: 5px;
+            font-size: 25px;
+            font-weight: bold;
+            color: whitesmoke;
+            margin-top: 10%;
+            cursor: pointer;
+        }
+
+        .btnout{
+            width: 100%;
+            background: linear-gradient(45deg, #140087, #2990b9);
+            border: none;
+            border-radius: 10px;
+            padding: 5px;
+            font-size: 25px;
+            font-weight: bold;
+            color: whitesmoke;
+            margin-top: 10%;
+            cursor: pointer;
+        }
+
+        input{
+            padding: 8px;
+            border-radius: 10px;
+            border: none;
+            font-size: 20px;
+            color: black;
+        }
+
+        #message-container{
+            background-color: rgba(245, 245, 245, 0.229);
+            box-shadow: 0 4px 15px rgba(52, 51, 51, 0.7);
+            border-radius: 0px 0px 10px 10px;
+            color: black;
+            width:50%
+        }
+
+        h1{
+            text-align: center;
+            color: rgb(255, 255, 255);
+            background: linear-gradient(45deg, #05ffa8, #8134af, #515bd4);
+            
+        }
+        
+        #messages-container{
+            display: flex;
+            flex-direction: column;
+            font-weight: bold;
+        }
+
+        .message{
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            color: crimson;
+            font-weight: bold;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.623);
+        }
+
+        .group_btns{
+            margin-top: 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .action-btn{
+            padding: 5px;
+            font-size: 30px;
+            border-radius: 50px;
+            background-color: rgba(0, 0, 0, 0);
+            cursor: pointer;
+        }
+
+        .check i{
+            background: linear-gradient(45deg, #21de86, #515bd4);
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .del i{
+            background: linear-gradient(45deg, #171616, #313233);
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .error-msg {
+            color: #ff4d4d;
+            text-align: center;
+            margin-top: 10px;
+            font-size: 0.9rem;
+        }
+
+        .message.new {
+            border-left: 5px solid #00d6de;
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.6;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- نموذج تسجيل الدخول -->
+        <div id="login-container">
+            <h1>Admin Login</h1>
+            <div class="divinput">
+                <input type="text" id="username" placeholder="Username" required>
+            <input type="password" id="password" placeholder="Password" required>
+            <button class="btnLog" onclick="login()">Login</button>
+            <p class="error-msg" id="error-msg"></p>
+            </div>
+            
+        </div>
+
+        <!-- عرض الرسائل -->
+        <div id="message-container" style="display: none;">
+            <h1>Messages</h1>
+            <div id="messages-container"></div>
+            <button class="btnout" style="margin-top: 10px;" onclick="logout()">Logout</button>
+        </div>
+    </div>
+
+    
+
+    <script>
+        // تسجيل الدخول
+        function login() {
+            const username = document.getElementById('username').value.trim();
+            const password = document.getElementById('password').value.trim();
+            const errorMsg = document.getElementById('error-msg');
+
+            if (username === "Black" && password === "Black&") {
+                // تخزين حالة تسجيل الدخول
+                localStorage.setItem('isLoggedIn', true);
+                toggleView(true);
+                loadMessages();
+            } else {
+                errorMsg.textContent = "خطأ: بيانات الدخول غير صحيحة.";
+            }
+        }
+
+        // تسجيل الخروج
+        function logout() {
+            localStorage.removeItem('isLoggedIn');
+            toggleView(false);
+        }
+
+        // تبديل العرض بين تسجيل الدخول والرسائل
+        function toggleView(isLoggedIn) {
+            document.getElementById('login-container').style.display = isLoggedIn ? 'none' : 'block';
+            document.getElementById('message-container').style.display = isLoggedIn ? 'block' : 'none';
+        }
+
+        // تحميل الرسائل
+        function loadMessages() {
+            const messages = JSON.parse(localStorage.getItem('messages')) || [];
+            const container = document.getElementById('messages-container');
+            container.innerHTML = '';
+
+            if (messages.length === 0) {
+                container.innerHTML = '<p class="no-messages">لا توجد رسائل لعرضها</p>';
+                return;
+            }
+
+            messages.forEach((msg, index) => {
+                const messageDiv = document.createElement('div');
+                messageDiv.className = `message ${msg.isNew ? 'new' : ''}`;
+                messageDiv.innerHTML = `
+                    <div>
+                        <p><strong>Name:</strong> ${msg.name}</p>
+                    <p><strong>Email:</strong> ${msg.email}</p>
+                    <p><strong>Message:</strong> ${msg.message}</p>
+                    <div class="timestamp">Sent on: ${msg.timestamp}</div>
+                        </div>
+                    <div class="button-group">
+                        ${msg.isNew ? `<div class="group_btns">
+        <button class="action-btn check" onclick="markAsRead(${index})">'<i class="fa-solid fa-square-check"></i>'</button>` : ''}
+        <button class="action-btn del" onclick="deleteMessage(${index})">'<i class="fa-solid fa-trash"></i>'</button>
+    </div>
+                    </div>
+                `;
+                container.appendChild(messageDiv);
+            });
+        }
+
+        // وضع الرسالة كـ "مقروءة"
+        function markAsRead(index) {
+            const messages = JSON.parse(localStorage.getItem('messages')) || [];
+            if (messages[index]) {
+                messages[index].isNew = false;
+                localStorage.setItem('messages', JSON.stringify(messages));
+                loadMessages();
+            }
+        }
+
+        // حذف الرسالة
+        function deleteMessage(index) {
+            const messages = JSON.parse(localStorage.getItem('messages')) || [];
+            messages.splice(index, 1);
+            localStorage.setItem('messages', JSON.stringify(messages));
+            loadMessages();
+        }
+
+        // التحقق من حالة تسجيل الدخول عند تحميل الصفحة
+        window.onload = () => {
+            const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
+            toggleView(isLoggedIn);
+            if (isLoggedIn) {
+                loadMessages();
+            }
+        };
+    </script>
+</body>
+</html>
